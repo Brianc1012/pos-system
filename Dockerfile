@@ -3,7 +3,8 @@ FROM richarvey/nginx-php-fpm:1.7.2
 COPY . .
 
 EXPOSE 3000
-CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=3000"]
+CMD ["sh", "-c", "php artisan serve --host=0.0.0.0 --port=${PORT:-3000}"]
+
 
 
 # Image config
